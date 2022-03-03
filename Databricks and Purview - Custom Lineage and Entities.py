@@ -60,13 +60,13 @@ def setupDeltaEntities():
     superTypes = ["DataSet"],
   )
   
-  # Create Delta Job Process (for lineage relationships)
+  # Create Delta Job Process (for lineage relationships or transformation logic)
   type_delta_job = EntityTypeDef(
     name="delta_lake_notebook_process",
     attributeDefs=[
-      AtlasAttributeDef(name="job_type",isOptional=False),
-      AtlasAttributeDef(name="schedule",defaultValue=""),
-      AtlasAttributeDef(name="notebook",defaultValue="")
+      AtlasAttributeDef(name="job_type",isOptional=False),      # Example Attributes
+      AtlasAttributeDef(name="schedule",defaultValue=""),       # Example Attributes
+      AtlasAttributeDef(name="notebook",defaultValue="")        # Example Attributes
     ],
     superTypes = ["Process"]
   )
