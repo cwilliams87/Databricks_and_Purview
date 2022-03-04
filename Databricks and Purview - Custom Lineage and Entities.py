@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-import os, json, jmespath
+import os, json
 from pyapacheatlas.core import AtlasEntity
 from pyapacheatlas.core.util import GuidTracker
 from pyapacheatlas.core import PurviewClient, AtlasEntity, AtlasProcess, TypeCategory
@@ -14,7 +14,7 @@ from pyspark.sql.functions import explode, expr
 
 # COMMAND ----------
 
-# Add your credentials here or set them as environment variables
+# Credentials
 tenant_id = ""                      # Azure Tenant ID
 client_id = ""                      # Service Principal Client ID
 client_secret = ""                  # Service Principal Client Secret
@@ -173,7 +173,7 @@ def registerDeltaEntityLineage(processName, entityQualifiedNameSource, entityTyp
   except:
     raise Exception(f"Entity cannot be found in catalog {entityQualifiedNameDest}")
     
-  process_qn = f"{processName}: This can be a process name/path"
+  process_qn = f"{processName}: <This can be a process name/path>"
 
   newLineage = AtlasProcess(
       name=processName,
